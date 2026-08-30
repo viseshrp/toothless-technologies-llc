@@ -13,8 +13,8 @@ Score each candidate from 1 to 5 and retain the written rationale.
 |---|---|
 | Public evidence | Is there a current, source-supported market signal? |
 | Product significance | Is the user problem material and suitable for product intervention? |
-| Strategic fit | Does the work fit Greyshore's digital-product mandate and current priorities? |
-| Differentiation | Can Greyshore form a credible, distinct product point of view? |
+| Strategic fit | Does the work fit Toothless Technologies LLC's digital-product mandate and current priorities? |
+| Differentiation | Can Toothless Technologies LLC form a credible, distinct product point of view? |
 | Commercial logic | Is there a plausible value and revenue case under stated assumptions? |
 | Delivery fit | Can the required team deliver within free-tool and local-MVP constraints? |
 | Risk | Are representation, data, regulatory, security, and reputation risks controlled? |

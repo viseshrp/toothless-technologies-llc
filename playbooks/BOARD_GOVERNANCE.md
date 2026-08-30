@@ -1,9 +1,9 @@
 # Board governance and product-advisor protocol
 
-Greyshore's Board oversees the CEO and the company's long-term interests. The
-Independent Board Director for Product and Strategy is a seasoned former CPO
-who brings an independent product perspective to Board matters and advises the
-human CPO when requested.
+Toothless Technologies LLC's Board oversees the CEO and the company's long-term
+interests. The Independent Board Director for Product and Strategy is a seasoned
+former CPO who brings an independent product perspective to Board matters and
+advises the human CPO when requested.
 
 ## Mandate
 

@@ -1,6 +1,6 @@
-# Greyshore Product Partners
+# Toothless Technologies LLC
 
-Greyshore Product Partners is an AI-native digital-product consultancy with one
+Toothless Technologies LLC is an AI-native digital-product consultancy with one
 human Chief Product Officer and a 30-role AI organization assembled by
 engagement.
 
@@ -11,12 +11,31 @@ engagement closeout. AI engineers can deliver locally runnable MVPs; the human
 CPO leads product and never writes code.
 
 > **Independent speculative work:** A real organization named in an engagement
-> is a target account, not a Greyshore client. It did not request, review, or
-> endorse the work. No outreach or external representation is permitted.
+> is a target account, not a client of Toothless Technologies LLC. It did not
+> request, review, or endorse the work. No outreach or external representation
+> is permitted.
 
-## Open the company
+> **Name and legal status:** Toothless Technologies LLC is the operating name
+> selected for this repository. The repository does not claim that an LLC has
+> been formed, registered, licensed, or is in good standing. Confirm name
+> availability, trademark risk, and formation requirements in the relevant
+> jurisdiction before using the name for real business.
 
-Open this repository in Codex and use:
+## Start in three steps
+
+1. Open the ChatGPT desktop app, choose **Open folder**, and select this cloned
+   repository (`toothless-technologies-llc`).
+2. Choose **Codex**, start a **New chat**, and paste the launch prompt below.
+3. Stay in that chat for the engagement. The CEO will assemble the AI team and
+   return when the CPO has a product decision to make.
+
+No command line, coding, or manual agent setup is required for the CPO. Codex
+reads [`AGENTS.md`](AGENTS.md) and the 30 project agent profiles automatically
+when the repository is opened.
+
+### First launch prompt
+
+Paste this exactly:
 
 ```text
 CEO, begin company operations. Have Sales identify three target-account
@@ -28,9 +47,11 @@ accountable executive or specialist. Do not perform outreach or imply that the
 target organization is a client.
 ```
 
-Codex reads [`AGENTS.md`](AGENTS.md) before working. That file defines company
-authority, Board oversight, product decision rights, delegation, evidence,
-external-action limits, and account isolation.
+The first useful result should be a CEO brief containing the selected target
+account, supporting public evidence, qualification, active roles, and exactly
+one product decision for the CPO. If the CEO assigns non-product work to her,
+reply: `This is not product work. Route it to the accountable company role and
+return when product authority is required.`
 
 ## Governance
 

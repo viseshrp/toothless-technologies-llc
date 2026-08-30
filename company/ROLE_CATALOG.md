@@ -1,8 +1,8 @@
 # AI role catalog
 
-Greyshore has 30 named AI roles. Each role has a matching profile in
-`.codex/agents/` and is activated only when the current engagement needs it.
-The human CPO is not an agent profile.
+Toothless Technologies LLC has 30 named AI roles. Each role has a matching
+profile in `.codex/agents/` and is activated only when the current engagement
+needs it. The human CPO is not an agent profile.
 
 ## Board and executive office
 

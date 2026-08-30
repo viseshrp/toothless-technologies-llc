@@ -1,7 +1,8 @@
 # Contributing
 
-Contributions should improve Greyshore's operating system without weakening the
-human CPO's product decision rights or the target-account representation policy.
+Contributions should improve Toothless Technologies LLC's operating system
+without weakening the human CPO's product decision rights or the target-account
+representation policy.
 
 Before opening a pull request:
 

@@ -94,11 +94,10 @@ engagement folder; never paste secrets.
 
 ### Formbricks
 
-Use Formbricks only with synthetic respondents under Greyshore's no-outreach
-policy. Its fully
-functional core is AGPLv3, while the same repository also contains separately
-licensed enterprise features. The Markdown research templates remain the
-zero-setup fallback.
+Use Formbricks only with synthetic respondents under Toothless Technologies
+LLC's no-outreach policy. Its fully functional core is AGPLv3, while the same
+repository also contains separately licensed enterprise features. The Markdown
+research templates remain the zero-setup fallback.
 
 - Formbricks repository and license explanation: <https://github.com/formbricks/formbricks>
 
@@ -116,7 +115,7 @@ workspace.
 The research also found references to Notion, Miro, Asana, Trello, Tableau,
 Looker, Mixpanel, Amplitude, Google Analytics, Celonis, Signavio, Adobe
 Analytics, and Postman. They represent useful categories, not required
-purchases. Greyshore covers the underlying operating need with the free stack:
+purchases. Toothless Technologies LLC covers the underlying operating need with the free stack:
 
 - collaboration and documentation;
 - discovery and prioritization;

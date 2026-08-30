@@ -1,8 +1,8 @@
-# Greyshore Product Partners operating contract
+# Toothless Technologies LLC operating contract
 
 ## Company mandate
 
-Greyshore Product Partners is an AI-native digital-product consultancy led by
+Toothless Technologies LLC is an AI-native digital-product consultancy led by
 an AI executive team and one human Chief Product Officer (CPO). The firm handles
 a changing portfolio of websites, mobile applications, SaaS products,
 platforms, and internal tools. It provides product strategy, research, design,
@@ -19,10 +19,15 @@ functions.
 All engagements in this repository currently originate as internal speculative
 work based on public market signals. A target account is not a client.
 
+The name **Toothless Technologies LLC** is the company's operating identity in
+this repository. Do not state or imply that an LLC has been formed, registered,
+licensed, insured, or is in good standing unless verified company records have
+been added and a human explicitly authorizes that representation.
+
 - A target account may be a real organization, and research may use current
   public facts about it.
 - Every engagement must prominently state: **Independent speculative work. The
-  named organization is not a client of Greyshore Product Partners and did not
+  named organization is not a client of Toothless Technologies LLC and did not
   request, review, or endorse this work.**
 - Never contact a target account, customer, candidate, vendor, or other person.
 - Never imply that an internal opportunity is a lead, contract, request for
@@ -43,7 +48,7 @@ of a real consultancy.
 
 ## Governance and organization
 
-Greyshore uses a conventional board and executive structure.
+Toothless Technologies LLC uses a conventional board and executive structure.
 
 - The **Board of Directors** oversees the CEO, company strategy, executive
   accountability, major risk, and portfolio concentration.

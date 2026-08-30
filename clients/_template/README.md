@@ -1,7 +1,7 @@
 # [Engagement name]
 
 > **Independent speculative work. The named organization is not a client of
-> Greyshore Product Partners and did not request, review, or endorse this work.**
+> Toothless Technologies LLC and did not request, review, or endorse this work.**
 
 ## Engagement at a glance
 
@@ -19,7 +19,7 @@
 
 ## Strategic objective
 
-[Why Greyshore allocated company capacity to this engagement.]
+[Why Toothless Technologies LLC allocated company capacity to this engagement.]
 
 ## Current product decision
 

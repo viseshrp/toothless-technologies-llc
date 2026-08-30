@@ -4,7 +4,7 @@
 
 Which practical tools and adjacent capabilities appear in current
 product-management job postings, and which free or open-source tools can
-Greyshore use to cover those operating needs?
+Toothless Technologies LLC use to cover those operating needs?
 
 This is a directional snapshot, not a statistically representative labor-market
 analysis. Postings can change or expire. Sources were accessed on 2026-08-30.
@@ -42,9 +42,9 @@ Across this sample, the strongest recurring competency clusters were:
 5. **Leadership:** communication, stakeholder alignment, prioritization,
    lifecycle ownership, empathy, and judgment.
 
-Greyshore should select tools for the underlying product capability rather than
-vendor-specific button sequences. Tool fluency matters, but the transferable
-product decision and operating artifact matter more.
+Toothless Technologies LLC should select tools for the underlying product
+capability rather than vendor-specific button sequences. Tool fluency matters,
+but the transferable product decision and operating artifact matter more.
 
 ## Operating implications
 

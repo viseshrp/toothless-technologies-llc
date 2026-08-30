@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate Greyshore's structural, authority, and representation contracts."""
+"""Validate the company's structural, authority, and representation contracts."""
 
 from __future__ import annotations
 
@@ -49,8 +49,20 @@ REQUIRED_TEMPLATE_FILES = [
 DISCLOSURE_PARTS = (
     "Independent speculative work.",
     "not a client of",
-    "Greyshore Product Partners",
+    "Toothless Technologies LLC",
     "did not request, review, or endorse this work.",
+)
+
+LEGAL_STATUS_PARTS = (
+    "Toothless Technologies LLC",
+    "does not",
+    "formed",
+    "registered",
+)
+
+LEGACY_BRAND_TERMS = (
+    "Grey" + "shore Product Partners",
+    "Grey" + "shore",
 )
 
 LEGACY_FRAMING_TERMS = (
@@ -115,6 +127,13 @@ def validate() -> list[str]:
         if not has_disclosure(path):
             errors.append(f"account template lacks complete disclosure: {relative}")
 
+    for relative in ("README.md", "DISCLAIMER.md"):
+        path = ROOT / relative
+        if path.is_file():
+            text = normalized_text(path)
+            if not all(part in text for part in LEGAL_STATUS_PARTS):
+                errors.append(f"missing company legal-status notice: {relative}")
+
     profiles = sorted(AGENT_DIR.glob("*.toml"))
     if len(profiles) != 30:
         errors.append(f"expected 30 agent profiles, found {len(profiles)}")
@@ -163,6 +182,12 @@ def validate() -> list[str]:
     for path in repository_text_files():
         text = path.read_text(encoding="utf-8")
         lowered = text.lower()
+        for term in LEGACY_BRAND_TERMS:
+            if term in text:
+                errors.append(
+                    f"legacy company name remains in {path.relative_to(ROOT)}: "
+                    f"{term}"
+                )
         for term in LEGACY_FRAMING_TERMS:
             if term in lowered:
                 errors.append(

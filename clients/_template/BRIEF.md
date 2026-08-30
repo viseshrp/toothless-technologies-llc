@@ -1,7 +1,7 @@
 # Internal target-account brief
 
 > **Independent speculative work. The named organization is not a client of
-> Greyshore Product Partners and did not request, review, or endorse this work.**
+> Toothless Technologies LLC and did not request, review, or endorse this work.**
 
 ## Brief metadata
 
@@ -10,7 +10,8 @@
 - **Selected by:** AI CEO
 - **Date:** YYYY-MM-DD
 - **Product category:** [website | mobile app | SaaS | platform | internal tool]
-- **Strategic fit:** [why this opportunity fits Greyshore's portfolio]
+- **Strategic fit:** [why this opportunity fits Toothless Technologies LLC's
+  portfolio]
 
 ## Public market signal
 
@@ -22,7 +23,7 @@
 
 ## Internal product mandate
 
-[The product outcome Greyshore will investigate. Do not state or imply that the
+[The product outcome Toothless Technologies LLC will investigate. Do not state or imply that the
 target organization requested it.]
 
 ## Internal assumptions
@@ -34,7 +35,7 @@ target organization requested it.]
 - **Assumed business objective:** [business outcome]
 - **Assumed constraint:** [budget, time, policy, channel, or dependency]
 - **Potential stakeholder roles:** [roles, not invented named people]
-- **Strategic value to Greyshore:** [portfolio or capability value]
+- **Strategic value to Toothless Technologies LLC:** [portfolio or capability value]
 - **Known risks:** [risk]
 
 ## Material unknowns

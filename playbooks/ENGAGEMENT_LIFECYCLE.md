@@ -27,7 +27,7 @@ logic, capacity, portfolio balance, and risk.
 
 ## Stage 2: Qualification
 
-**Purpose:** determine whether Greyshore should allocate company capacity to the
+**Purpose:** determine whether Toothless Technologies LLC should allocate company capacity to the
 selected opportunity.
 
 **Active roles:** CEO, CRO, CFO, CTO, COO, Legal and Risk Advisor, Account

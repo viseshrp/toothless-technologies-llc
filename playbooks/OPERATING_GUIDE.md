@@ -1,6 +1,6 @@
 # Company operating guide
 
-This guide opens Greyshore Product Partners, qualifies an internal opportunity,
+This guide opens Toothless Technologies LLC, qualifies an internal opportunity,
 and routes work through the executive team.
 
 ## 1. Begin operations
@@ -8,7 +8,7 @@ and routes work through the executive team.
 Open the repository in Codex and send:
 
 ```text
-Act as the CEO of Greyshore Product Partners. Read AGENTS.md and the company and
+Act as the CEO of Toothless Technologies LLC. Read AGENTS.md and the company and
 playbook files. Direct Sales to identify three current target-account
 opportunities from public market signals. Have Revenue, Finance, Technology,
 Operations, and Legal qualify them. Select the strongest opportunity, create

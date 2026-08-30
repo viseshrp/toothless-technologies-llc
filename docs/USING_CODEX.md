@@ -1,8 +1,8 @@
-# Running Greyshore with Codex
+# Running Toothless Technologies LLC with Codex
 
-The repository configures a lead Codex agent to operate as Greyshore's CEO and
-assemble specialist AI roles while the human CPO remains in the main product
-conversation.
+The repository configures a lead Codex agent to operate as Toothless
+Technologies LLC's CEO and assemble specialist AI roles while the human CPO
+remains in the main product conversation.
 
 ## Agent configuration
 
@@ -17,8 +17,22 @@ which keeps the operating system portable as models change.
 
 Official OpenAI documentation:
 
+- [Open a folder and start a new Codex chat](https://learn.chatgpt.com/docs/app)
 - [How Codex discovers `AGENTS.md`](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
 - [Codex subagents and project agent profiles](https://learn.chatgpt.com/docs/agent-configuration/subagents)
+
+## First use
+
+1. Open the ChatGPT desktop app and sign in.
+2. Choose **Open folder** and select the cloned
+   `toothless-technologies-llc` repository.
+3. Choose **Codex**, start a **New chat**, and paste the first-launch prompt from
+   the root [`README.md`](../README.md).
+4. Continue in the same chat until the engagement closes. Answer only the
+   product decisions reserved for the CPO; direct other work back to the CEO.
+
+The CPO does not need to choose or start individual agents. The CEO activates
+the relevant project-scoped profiles and consolidates their work.
 
 ## CPO commands
 

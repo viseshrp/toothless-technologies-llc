@@ -1,6 +1,6 @@
 # Account engagements
 
-Each directory contains one isolated Greyshore Product Partners engagement.
+Each directory contains one isolated Toothless Technologies LLC engagement.
 Current engagements are internal speculative work based on public market
 signals. A named target organization is not a client and has not requested,
 reviewed, or endorsed the work.
