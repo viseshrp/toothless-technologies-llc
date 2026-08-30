@@ -30,6 +30,7 @@ REQUIRED_FILES = [
     "playbooks/PROJECT_BOARDS.md",
     "playbooks/TOOLS.md",
     "docs/USING_CODEX.md",
+    ".codex/config.toml",
     ".github/ISSUE_TEMPLATE/team-work-item.yml",
 ]
 
@@ -88,6 +89,58 @@ LEGACY_FRAMING_TERMS = (
     "men" + "tor",
 )
 
+LEAD_MODEL = "gpt-5.6-sol"
+MODEL_REASONING_EFFORT = "max"
+AGENT_MODEL_TIERS = {
+    "gpt-5.6-sol": {
+        "board-product-advisor",
+        "ceo",
+        "cfo",
+        "chief-revenue-officer",
+        "coo",
+        "cto",
+    },
+    "gpt-5.6-terra": {
+        "accessibility-specialist",
+        "content-designer",
+        "customer-success-manager",
+        "devops-sre",
+        "engineering-manager",
+        "experimentation-analyst",
+        "legal-risk-advisor",
+        "market-researcher",
+        "product-analyst",
+        "product-designer",
+        "product-marketing-manager",
+        "product-operations-manager",
+        "sales-director",
+        "security-engineer",
+        "solution-architect",
+        "solutions-consultant",
+        "technical-writer",
+        "user-researcher",
+    },
+    "gpt-5.6-luna": {
+        "account-executive",
+        "backend-engineer",
+        "data-engineer",
+        "frontend-engineer",
+        "mobile-engineer",
+        "qa-engineer",
+    },
+}
+AGENT_MODELS = {
+    agent: model
+    for model, agents in AGENT_MODEL_TIERS.items()
+    for agent in agents
+}
+SESSION_ROUTING_PARTS = (
+    "Every company task must run under the model assigned to its accountable role.",
+    "delegate the task to that exact custom profile",
+    "Do not use a generic agent or the lead session",
+    "Do not emulate the role under a different model.",
+)
+
 TEXT_SUFFIXES = {".md", ".toml", ".py", ".yml", ".yaml"}
 MARKDOWN_LINK = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
 
@@ -121,8 +174,43 @@ def validate() -> list[str]:
             errors.append(f"missing required file: {relative}")
 
     agents_path = ROOT / "AGENTS.md"
-    if agents_path.is_file() and agents_path.stat().st_size > 32 * 1024:
-        errors.append("AGENTS.md exceeds Codex's default 32 KiB instruction limit")
+    if agents_path.is_file():
+        if agents_path.stat().st_size > 32 * 1024:
+            errors.append("AGENTS.md exceeds Codex's default 32 KiB instruction limit")
+        agents_text = normalized_text(agents_path)
+        missing_routing_parts = [
+            part for part in SESSION_ROUTING_PARTS if part not in agents_text
+        ]
+        if missing_routing_parts:
+            errors.append("AGENTS.md lacks mandatory session model routing")
+
+    project_config_path = ROOT / ".codex" / "config.toml"
+    if project_config_path.is_file():
+        try:
+            project_config = tomllib.loads(
+                project_config_path.read_text(encoding="utf-8")
+            )
+        except (OSError, tomllib.TOMLDecodeError) as exc:
+            errors.append(f"invalid project Codex config: {exc}")
+        else:
+            if project_config.get("model") != LEAD_MODEL:
+                errors.append(f"project lead model must be {LEAD_MODEL}")
+            if project_config.get("model_reasoning_effort") != MODEL_REASONING_EFFORT:
+                errors.append("project lead reasoning effort must be max")
+
+            agent_defaults = project_config.get("agents")
+            if not isinstance(agent_defaults, dict):
+                errors.append("project Codex config lacks [agents] defaults")
+            else:
+                if agent_defaults.get("enabled") is not True:
+                    errors.append("project Codex config must enable agents")
+                if agent_defaults.get("default_subagent_model") != LEAD_MODEL:
+                    errors.append(f"default subagent model must be {LEAD_MODEL}")
+                if (
+                    agent_defaults.get("default_subagent_reasoning_effort")
+                    != MODEL_REASONING_EFFORT
+                ):
+                    errors.append("default subagent reasoning effort must be max")
 
     for relative in REQUIRED_TEMPLATE_FILES:
         if not (TEMPLATE_DIR / relative).is_file():
@@ -149,7 +237,13 @@ def validate() -> list[str]:
         errors.append("missing independent Board product-advisor profile")
 
     names: dict[str, Path] = {}
-    required_keys = ("name", "description", "developer_instructions")
+    required_keys = (
+        "name",
+        "description",
+        "model",
+        "model_reasoning_effort",
+        "developer_instructions",
+    )
     for profile in profiles:
         try:
             data = tomllib.loads(profile.read_text(encoding="utf-8"))
@@ -171,6 +265,24 @@ def validate() -> list[str]:
                 )
             else:
                 names[name] = profile
+
+            expected_model = AGENT_MODELS.get(name)
+            if expected_model is None:
+                errors.append(f"agent has no model-tier assignment: {name}")
+            elif data.get("model") != expected_model:
+                errors.append(
+                    f"agent {name} must use {expected_model}, "
+                    f"found {data.get('model')!r}"
+                )
+            if data.get("model_reasoning_effort") != MODEL_REASONING_EFFORT:
+                errors.append(f"agent {name} reasoning effort must be max")
+
+    missing_model_profiles = sorted(set(AGENT_MODELS) - set(names))
+    if missing_model_profiles:
+        errors.append(
+            "model-tier profiles missing from .codex/agents: "
+            + ", ".join(missing_model_profiles)
+        )
 
     team_projects_path = ROOT / "company" / "team_projects.toml"
     if team_projects_path.is_file():

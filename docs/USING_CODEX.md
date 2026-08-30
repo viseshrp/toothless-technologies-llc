@@ -12,12 +12,22 @@ executive, product, design, engineering, data, revenue, operations, and risk
 role. The lead agent activates the smallest accountable team, gives each role a
 bounded assignment, and returns its evidence or artifact to the engagement.
 
-The role files omit a fixed model and inherit the available Codex configuration,
-which keeps the operating system portable as models change.
+The project `.codex/config.toml` sets new lead sessions to `gpt-5.6-sol` with
+`max` reasoning. Every role profile also sets an explicit model and `max`
+reasoning: senior leadership uses Sol, direct reports to senior leadership use
+Terra, and roles reporting to a manager or director use Luna. The lead session
+routes substantive work through the exact role profile instead of performing
+specialist work itself.
+
+Project configuration applies when the repository is trusted. An explicit model
+selection in the app or a command-line override has higher precedence, so do not
+override the configured model for company work. Existing sessions do not change
+models retroactively; start a new chat after model-routing configuration changes.
 
 Official OpenAI documentation:
 
 - [Open a folder and start a new Codex chat](https://learn.chatgpt.com/docs/app)
+- [Codex project configuration basics](https://learn.chatgpt.com/docs/config-file/config-basic)
 - [How Codex discovers `AGENTS.md`](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
 - [Codex subagents and project agent profiles](https://learn.chatgpt.com/docs/agent-configuration/subagents)
 
@@ -82,8 +92,8 @@ memorandum without managing my team or writing my product decision.
 - Before and after work, every specialist updates the appropriate functional
   project card under `playbooks/PROJECT_BOARDS.md`.
 - The lead agent reviews delegated output before treating it as accepted.
-- If subagents are unavailable, the lead agent performs the roles sequentially
-  under the same authority boundaries.
+- If the required custom role cannot run, pause that assignment and record the
+  routing blocker. The lead agent does not emulate it under another model.
 - Board involvement requires a documented governance trigger.
 
 ## Expected executive update

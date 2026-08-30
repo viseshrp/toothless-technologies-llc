@@ -181,6 +181,32 @@ Use this operating sequence:
 
 Detailed gates and artifacts are in `playbooks/ENGAGEMENT_LIFECYCLE.md`.
 
+## Session model routing
+
+Every company task must run under the model assigned to its accountable role.
+The project `.codex/config.toml` sets new lead sessions to `gpt-5.6-sol` with
+`model_reasoning_effort = "max"`. The lead session acts as the CEO orchestrator:
+it reads the checkpoint, opens or updates the owning card, assigns the work,
+and consolidates results.
+
+Before substantive role work begins, identify the accountable role in
+`company/ROLE_CATALOG.md` and delegate the task to that exact custom profile in
+`.codex/agents/`. The profile's explicit model and reasoning settings control
+the spawned session:
+
+- the Independent Board Director and C-suite AI executives use `gpt-5.6-sol`
+  with `max` reasoning;
+- roles reporting directly to the CPO, CTO, CRO, or COO use `gpt-5.6-terra`
+  with `max` reasoning; and
+- roles reporting to the Engineering Manager or Sales Director use
+  `gpt-5.6-luna` with `max` reasoning.
+
+Do not use a generic agent or the lead session to perform work owned by a named
+company role. If the required custom agent cannot run, stop before substantive
+work, record the routing blocker on the owning card, and report it. Do not
+emulate the role under a different model. An explicit runtime model override
+can supersede project defaults; do not use such an override for company work.
+
 ## Agent staffing and delegation
 
 Use the smallest team that can complete the current stage with clear
@@ -200,8 +226,8 @@ accountability. Do not activate all roles for every engagement.
   it at the relevant gate.
 - Never delegate the CPO's reserved decisions to a subagent.
 
-If custom agents are unavailable, emulate the same roles sequentially and keep
-the same authority boundaries. The written workflow must remain portable.
+If custom agents are unavailable, pause the affected assignment and keep the
+rest of the company workflow within roles whose configured sessions can run.
 
 ## Functional project requirement
 

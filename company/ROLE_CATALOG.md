@@ -4,6 +4,22 @@ Toothless Technologies LLC has 30 named AI roles. Each role has a matching
 profile in `.codex/agents/` and is activated only when the current engagement
 needs it. The human CPO is not an agent profile.
 
+## Session and subagent model tiers
+
+Role seniority follows the reporting lines in this catalog:
+
+- **Senior leadership:** the Independent Board Director and five C-suite AI
+  executives use `gpt-5.6-sol` with `model_reasoning_effort = "max"`.
+- **Mid-level:** roles reporting directly to the CPO, CTO, CRO, or COO use
+  `gpt-5.6-terra` with `model_reasoning_effort = "max"`.
+- **Junior:** roles reporting to the Engineering Manager or Sales Director use
+  `gpt-5.6-luna` with `model_reasoning_effort = "max"`.
+
+Each `.codex/agents/*.toml` profile records its model explicitly. The human CPO
+remains outside the subagent model assignment. New lead company sessions use
+`gpt-5.6-sol` with `max` reasoning and route substantive work through the exact
+profile for the accountable role.
+
 ## Board and executive office
 
 ### 1. Chief Executive Officer

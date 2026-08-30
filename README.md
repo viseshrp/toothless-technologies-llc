@@ -48,8 +48,10 @@ isolated account workspace, and staff the smallest team required. Brief me as
 the CPO when a product decision is ready. Route every non-product task to the
 accountable executive or specialist. Read OPERATIONS.md first. Create or update
 the appropriate functional project card before each team works, and update all
-affected team projects before pausing. Do not perform outreach or imply that
-the target organization is a client.
+affected team projects before pausing. Run each assigned task through the exact
+project-scoped role profile so its configured model is used; never emulate a
+named role in the lead session. Do not perform outreach or imply that the target
+organization is a client.
 ```
 
 The first useful result should be a CEO brief containing the selected target

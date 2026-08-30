@@ -9,8 +9,9 @@ on the linked project cards.
 - **Company status:** Ready to begin
 - **Active engagement:** None
 - **Current stage:** Company setup
-- **Last completed:** Public repository, 30-role company structure, and 12
-  functional project boards established
+- **Last completed:** Role-based session routing enforced: new lead sessions
+  default to GPT-5.6 Sol with max reasoning, and all substantive work routes to
+  the accountable role's explicit Sol, Terra, or Luna profile
 - **Next action:** The CEO directs Sales to identify three target-account
   opportunities from current public signals
 - **Blocked by:** Nothing
@@ -21,6 +22,7 @@ on the linked project cards.
 
 - [Operations project](https://github.com/users/viseshrp/projects/11)
 - [Standing company checkpoint card](https://github.com/viseshrp/toothless-technologies-llc/issues/10)
+- [Completed role-model assignment](https://github.com/viseshrp/toothless-technologies-llc/issues/13)
 - [Next company action: Sales opportunity set](https://github.com/viseshrp/toothless-technologies-llc/issues/8)
 - [All functional projects](company/TEAM_PROJECTS.md)
 - [Project operating contract](playbooks/PROJECT_BOARDS.md)
@@ -28,9 +30,10 @@ on the linked project cards.
 
 ## Active or blocked company cards
 
-The standing Operations checkpoint card is active. No engagement delivery is
-active. The Sales opportunity card is Ready; other initial cards remain in
-Backlog or Ready until their dependencies are satisfied.
+The standing Operations checkpoint card is active. The role-model and session-
+routing assignment is complete. No engagement delivery is active. The Sales
+opportunity card is Ready; other initial cards remain in Backlog or Ready until
+their dependencies are satisfied.
 
 ## Resume procedure
 
