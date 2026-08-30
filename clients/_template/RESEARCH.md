@@ -6,12 +6,12 @@
 
 ## Research objective
 
-[What must be learned, not merely what activity will be performed?]
+[What must be established for the decision?]
 
 ## Method
 
-- **Method:** [public-source review | competitive analysis | synthetic
-  interview exercise | proxy usability test | synthetic data analysis]
+- **Method:** [public-source review | competitive analysis | synthetic interview
+  set | proxy usability test | synthetic data analysis]
 - **Why this method:** [reason]
 - **Limitation:** [what this method cannot establish]
 
@@ -23,8 +23,8 @@ Use one label per claim.
 |---|---|---|---|---|---|---|
 | Fact | [directly supported claim] | [source] | [date] | [date] | [high/medium/low] | [implication] |
 | Inference | [interpretation] | [supporting facts] | — | [date] | [high/medium/low] | [implication] |
-| Assumption | [invented premise] | Exercise assumption | — | [date] | [high/medium/low] | [implication] |
-| Synthetic evidence | [generated result] | Synthetic exercise | — | [date] | not real-world confidence | [what it helps practice] |
+| Assumption | [internal premise] | Internal assumption | — | [date] | [high/medium/low] | [implication] |
+| Synthetic evidence | [generated result] | Synthetic input | — | [date] | not observed confidence | [decision relevance] |
 | Unknown | [unanswered question] | Not yet known | — | [date] | — | [risk if unresolved] |
 
 ## User or stakeholder segments considered
@@ -35,15 +35,15 @@ Use one label per claim.
 
 ## Alternatives and current behavior
 
-[How might people solve the problem today? Include doing nothing.]
+[How might people address the problem today? Include doing nothing.]
 
 ## Synthesis
 
-- **What seems true:** [finding]
+- **What appears supported:** [finding]
 - **What remains assumed:** [assumption]
 - **Most important unknown:** [unknown]
 - **Riskiest product assumption:** [assumption]
-- **Recommended next learning step:** [method and reason]
+- **Recommended next evidence step:** [method and reason]
 
 ## CPO interpretation
 

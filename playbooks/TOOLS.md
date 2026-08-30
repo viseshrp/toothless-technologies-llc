@@ -1,8 +1,8 @@
 # Free and open-source product tool stack
 
-This stack is designed for one human CPO and AI agents that work primarily in
-the repository. It reflects tool categories repeatedly requested in current PM
-job postings while avoiding paid plans.
+This stack supports one human CPO and AI teams that work primarily in the
+repository. It reflects tool categories repeatedly requested in current PM job
+postings while avoiding paid plans.
 
 Plan details change. The links and limits below were checked on 2026-08-30.
 Before assigning an external tool, verify its current official plan page. If a
@@ -10,7 +10,7 @@ free feature disappears, use the listed fallback.
 
 ## Default stack
 
-| Product job to practice | Recognized free tool | Free/open-source fallback | Repository artifact |
+| Product operating need | Recognized free tool | Free/open-source alternative | Repository artifact |
 |---|---|---|---|
 | Backlog and delivery | Jira Free | Plane Community Edition or GitHub Issues/Projects | `ROADMAP.md`, issues, decision log |
 | Product discovery and prioritization | Jira Product Discovery Free | GitHub Projects plus Markdown | `PRODUCT_STRATEGY.md`, opportunity table |
@@ -33,12 +33,12 @@ decisions in Markdown even when an issue tracks the work.
 
 ### Figma Starter and FigJam
 
-Use the free Starter plan for basic design and whiteboarding practice. Only the
+Use the free Starter plan for product design and whiteboarding. Only the
 human CPO needs an account. Export a PNG/PDF or add a share link plus a written
 design rationale to the engagement folder.
 
 Do not depend on Dev Mode: Figma's Starter-plan documentation says it is not
-included. If the Starter limits interrupt the exercise, use Penpot.
+included. If the Starter limits block the engagement, use Penpot.
 
 - Pricing: <https://www.figma.com/pricing/>
 - Starter plan: <https://help.figma.com/hc/en-us/articles/13838684089751-Starter-plan-overview>
@@ -49,7 +49,7 @@ included. If the Starter limits interrupt the exercise, use Penpot.
 Use these only when the CPO is specifically practicing employer-recognized
 workflows. As checked, Jira Free and Confluence Free support up to 10 users, and
 Jira Product Discovery Free supports up to 3 creators. One human account fits
-the exercise; agents should not consume seats.
+the company; agents should not consume seats.
 
 - Jira pricing: <https://www.atlassian.com/software/jira/pricing>
 - Jira Product Discovery pricing: <https://www.atlassian.com/software/jira/product-discovery/pricing>
@@ -58,15 +58,15 @@ the exercise; agents should not consume seats.
 
 ### Dovetail
 
-The free plan is useful for learning research-repository concepts but is limited
-to one project and one channel as checked. Work on one practice case at a time
+The free plan provides a small research repository but is limited to one project
+and one channel as checked. Use it for one engagement at a time
 or keep the full evidence trail in `RESEARCH.md`.
 
 - Pricing: <https://dovetail.com/pricing/>
 
 ### PostHog
 
-Use the cloud free tier for a small local practice product only if the CPO wants
+Use the cloud free tier for a small local product only if the CPO wants
 hands-on analytics. Do not send real personal data. The open-source self-hosted
 edition is possible, but PostHog recommends Cloud for most teams and warns that
 self-hosting requires infrastructure and security expertise. The default
@@ -77,9 +77,9 @@ fallback is a synthetic local dataset analyzed with DuckDB.
 
 ### DuckDB and Metabase
 
-DuckDB provides local SQL practice against CSV, JSON, and Parquet data without a
+DuckDB provides local SQL analysis against CSV, JSON, and Parquet data without a
 server. Metabase Open Source can turn a local dataset into a dashboard when the
-visualization itself is part of the learning goal. Use synthetic data only.
+visualization is part of the product requirement. Use synthetic data only.
 
 - DuckDB, MIT licensed: <https://github.com/duckdb/duckdb>
 - Metabase Open Source: <https://www.metabase.com/start/oss/>
@@ -94,7 +94,8 @@ engagement folder; never paste secrets.
 
 ### Formbricks
 
-Use Formbricks only with synthetic respondents in this studio. Its fully
+Use Formbricks only with synthetic respondents under Greyshore's no-outreach
+policy. Its fully
 functional core is AGPLv3, while the same repository also contains separately
 licensed enterprise features. The Markdown research templates remain the
 zero-setup fallback.
@@ -115,7 +116,7 @@ workspace.
 The research also found references to Notion, Miro, Asana, Trello, Tableau,
 Looker, Mixpanel, Amplitude, Google Analytics, Celonis, Signavio, Adobe
 Analytics, and Postman. They represent useful categories, not required
-purchases. The studio practices the underlying competency with the free stack:
+purchases. Greyshore covers the underlying operating need with the free stack:
 
 - collaboration and documentation;
 - discovery and prioritization;
@@ -125,4 +126,4 @@ purchases. The studio practices the underlying competency with the free stack:
 - clear stakeholder communication.
 
 Do not collect tools for their own sake. Choose a tool only when it makes the
-current product decision, artifact, or learning objective better.
+current product decision, artifact, or business objective better.

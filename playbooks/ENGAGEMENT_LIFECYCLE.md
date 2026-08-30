@@ -1,115 +1,139 @@
 # Engagement lifecycle and gates
 
-Every practice case uses the same eleven stages. Stages can be shortened, but a
-gate cannot be silently skipped. The CEO owns the engagement flow; the Product
-Coach keeps the CPO learning; named decision owners approve their domains.
+Every account follows ten operating stages. A stage may be compressed, but its
+decision owner and gate cannot be silently skipped. The CEO owns engagement
+flow; named executives and specialists own their domains; the CPO owns all
+product decisions.
 
 ## Stage 1: Opportunity
 
-**Purpose:** create a realistic learning problem without pretending there is a
-real client.
+**Purpose:** identify product-consulting opportunities from current public
+market signals.
 
-**Active roles:** CEO, CRO, Sales Director, Market Researcher, Legal and Risk
-Advisor.
+**Active roles:** CRO, Sales Director, Market Researcher, Legal and Risk Advisor.
 
-**Required output:** three public-source opportunity cards, each with:
+**Required output:** three internal opportunity cards, each with:
 
-- named company and current signal;
+- target organization and public signal;
 - source links and access dates;
-- fictional need and clearly labeled assumptions;
-- possible digital-product type;
-- likely product learning objectives; and
-- required simulation disclaimer.
+- assumed need and commercial context;
+- possible product category and mandate;
+- strategic fit, revenue logic, and delivery implications;
+- representation, data, regulatory, and reputation risk; and
+- the required independent-work disclosure.
 
-**Gate O — CEO:** select one case based on learning value, evidence quality,
-scope, and safety. No CPO product decision is required yet.
+**Gate O — CEO:** select one opportunity based on evidence, strategy, commercial
+logic, capacity, portfolio balance, and risk.
 
-## Stage 2: Kickoff
+## Stage 2: Qualification
 
-**Purpose:** turn the selected opportunity into a controlled engagement.
+**Purpose:** determine whether Greyshore should allocate company capacity to the
+selected opportunity.
 
-**Active roles:** CEO, COO, Product Coach, Product Operations Manager, Account
+**Active roles:** CEO, CRO, CFO, CTO, COO, Legal and Risk Advisor, Account
 Executive.
 
+**Required output:** `QUALIFICATION.md` covering:
+
+- strategic and portfolio fit;
+- assumed account and commercial context;
+- product mandate and key unknowns;
+- financial range and cost assumptions;
+- technical feasibility and capability gaps;
+- staffing and dependency impact;
+- risk assessment and controls; and
+- executive accept, reject, or condition recommendations.
+
+**Gate Q — CEO:** accept, reject, or condition the opportunity. Material
+portfolio or company-governance exposure goes to the Board.
+
+## Stage 3: Kickoff
+
+**Purpose:** establish an isolated engagement with explicit authority and
+accountability.
+
+**Active roles:** CEO, COO, CPO, Product Operations Manager, Account Executive.
+
 **Required output:** a new `clients/<engagement-slug>/` copied from the template,
-completed `README.md` and `BRIEF.md`, named team, assumptions, risks, stage plan,
-and first product question.
+completed `README.md`, `BRIEF.md`, `QUALIFICATION.md`, `TEAM.md`, assumptions,
+risks, stage plan, and first product decision.
 
-**Gate K — CEO:** confirm the folder is isolated, disclaimers are present, and
-staffing is minimal. The CEO then briefs the CPO.
+**Gate K — CEO:** confirm account isolation, disclosure, qualification, staffing,
+decision rights, and scope.
 
-## Stage 3: Discover
+## Stage 4: Discovery
 
-**Purpose:** learn enough about users, context, behavior, and alternatives to
-frame a product problem responsibly.
+**Purpose:** gather enough evidence about users, context, behavior, alternatives,
+and constraints to frame the product problem.
 
-**Active roles:** Product Coach, Market Researcher, User Researcher, Product
-Analyst; add Solutions Consultant or CTO for material technical unknowns.
+**Active roles:** Market Researcher, User Researcher, Product Analyst; add
+Solutions Consultant or CTO for material technical unknowns.
 
-**CPO decisions:** research objective, riskiest assumptions, target segments to
-study, evidence threshold, and interpretation of the evidence.
+**CPO decisions:** research objective, riskiest assumptions, segments to
+investigate, evidence threshold, and interpretation of evidence.
 
 **Required output:** `RESEARCH.md` containing facts, inferences, assumptions,
 unknowns, methods, limitations, and citations. Synthetic interviews and data
 must be labeled at every use.
 
-**Gate D — CPO:** approve that the evidence is sufficient to define a problem,
-or choose more research.
+**Gate D — CPO:** evidence is sufficient to define a problem, or additional
+discovery is required.
 
-## Stage 4: Define
+## Stage 5: Strategy
 
-**Purpose:** choose the problem and outcome before choosing a solution.
+**Purpose:** select the product problem, outcome, and strategic position before
+committing to a solution.
 
-**Active roles:** Product Coach, Product Designer, Product Analyst, CFO when
-business viability matters.
+**Active roles:** Product Designer, Product Analyst, CFO when viability matters,
+Market Researcher when competitive context remains open.
 
-**CPO decisions:** target user, job or need, problem statement, desired outcome,
-value proposition, product principles, success metric, guardrails, and explicit
-non-goals.
+**CPO decisions:** target user, problem statement, desired outcome, value
+proposition, product principles, success metric, guardrails, and non-goals.
 
-**Required output:** the problem and strategy sections of `PRODUCT_STRATEGY.md`,
-an updated `METRICS.md`, and decision-log entries.
+**Required output:** approved `PRODUCT_STRATEGY.md`, updated `METRICS.md`, and
+decision-log entries.
 
-**Gate P — CPO:** approve the problem, outcome, and measurement direction.
+**Gate S — CPO:** approve the user, problem, outcome, and strategic choices.
 
-## Stage 5: Explore
+## Stage 6: Solution
 
-**Purpose:** compare meaningfully different ways to create the desired outcome.
+**Purpose:** compare materially different ways to create the approved outcome.
 
 **Active roles:** Product Designer, Content Designer, Accessibility Specialist,
-Solution Architect, CFO when cost materially differs.
+Solution Architect, CFO when cost differs materially.
 
 **CPO decisions:** evaluation criteria, selected concept, experience direction,
-and accepted tradeoffs.
+and accepted product tradeoffs.
 
-**Required output:** at least three solution concepts, including a low-complexity
-option; user flow; assumption map; feasibility notes; and a decision record.
+**Required output:** at least three concepts including a low-complexity option,
+user flow, assumption map, feasibility notes, and decision record.
 
-**Gate E — CPO and CTO:** CPO selects the product direction. CTO confirms that
-at least one implementation path is feasible within the fictional constraints.
+**Gate C — CPO and CTO:** the CPO selects the product direction. The CTO confirms
+at least one feasible implementation path.
 
-## Stage 6: Validate
+## Stage 7: Validation
 
-**Purpose:** test the riskiest product assumptions before committing to build.
+**Purpose:** reduce the riskiest product uncertainty before authorizing a build.
 
 **Active roles:** Product Designer, User Researcher, Content Designer,
 Accessibility Specialist, Experimentation Analyst.
 
-**CPO decisions:** hypothesis, prototype fidelity, participant profile or proxy,
-success threshold, interpretation, and iteration choice.
+**CPO decisions:** hypothesis, prototype fidelity, participant proxy, success
+threshold, interpretation, and product response.
 
-**Required output:** prototype reference or repo-native flow, test plan, clearly
-labeled synthetic/proxy findings, limitations, and resulting changes.
+**Required output:** prototype reference or repository-native flow, validation
+plan, clearly labeled synthetic or proxy findings, limitations, and resulting
+product changes.
 
-**Gate V — CPO:** persevere, pivot, narrow, or stop. Record why.
+**Gate V — CPO:** proceed, redirect, narrow, or stop, with a recorded rationale.
 
-## Stage 7: Plan
+## Stage 8: Plan
 
-**Purpose:** define the smallest valuable and testable MVP and align product and
-technical execution.
+**Purpose:** define the smallest valuable MVP and align product and technical
+execution.
 
 **Active roles:** Product Operations Manager, CTO, Engineering Manager, Solution
-Architect, Product Analyst, Security Engineer as needed.
+Architect, Product Analyst, Security Engineer as required.
 
 **CPO decisions:** MVP goal, in-scope and out-of-scope behavior, priority,
 acceptance criteria, roadmap order, success measures, and product risks.
@@ -117,85 +141,67 @@ acceptance criteria, roadmap order, success measures, and product risks.
 **Required output:** approved `PRD.md`, `ROADMAP.md`, `METRICS.md`, experience
 reference, and technical plan under `delivery/`.
 
-**Gate B — dual approval:** the CPO signs off product scope and acceptance
+**Gate P — dual approval:** the CPO signs off product scope and acceptance
 criteria. The CTO signs off feasibility, security approach, and build plan.
 
-## Stage 8: Build
+## Stage 9: Build and assure
 
-**Purpose:** create a working local MVP that tests the approved product idea.
+**Purpose:** deliver a working local MVP and determine product and technical
+readiness.
 
-**Active roles:** CTO, Engineering Manager, only the engineers required, QA,
-Security, Technical Writer.
+**Active roles:** CTO, Engineering Manager, required engineers, QA, Security,
+Accessibility, Product Design, Product Analyst, Technical Writer.
 
-**CPO decisions:** resolve product questions, review increments, accept or reject
-scope changes, and decide whether behavior matches the intent.
+**CPO decisions:** resolve product ambiguity, accept or reject scope changes,
+evaluate working behavior, prioritize experience gaps, and approve product
+readiness.
 
 **Required output:** working code under `delivery/`, tests, setup instructions,
-and `delivery/BUILD_LOG.md` with commands and results.
-
-**Gate I — Engineering Manager:** implementation is complete against the current
-approved scope. Product deviations are logged and approved by the CPO.
-
-## Stage 9: Assure
-
-**Purpose:** determine whether the MVP is useful enough and safe enough for the
-simulated next step.
-
-**Active roles:** QA Engineer, Security Engineer, Accessibility Specialist,
-Product Designer, Product Analyst, CTO.
-
-**CPO decisions:** product acceptance, severity of experience gaps, metric
-readiness, and which issues block a simulated release.
-
-**Required output:** acceptance results, defect list, accessibility review,
-security review, analytics plan, and known limitations.
+`delivery/BUILD_LOG.md`, acceptance results, defect list, accessibility and
+security reviews, analytics plan, and known limitations.
 
 **Gate A — dual approval:** the CPO approves product readiness. The CTO approves
-technical readiness. Either may reject and return the case to Build.
+technical readiness. Either may reject and return the engagement to build.
 
-## Stage 10: Launch simulation
+## Stage 10: Market readiness and closeout
 
-**Purpose:** practice bringing a product to market without actually publishing
-or contacting anyone.
+**Purpose:** prepare an internal account and product recommendation, preserve the
+delivery record, and return company capacity.
 
-**Active roles:** Product Marketing Manager, Customer Success Manager, Product
-Analyst, CRO, Technical Writer, Legal and Risk Advisor.
+**Active roles:** CEO, COO, CRO, CPO, CTO, CFO, Product Marketing Manager,
+Customer Success Manager, Product Analyst, Legal and Risk Advisor.
 
-**CPO decisions:** product narrative, product promises, rollout approach,
-learning plan, and product-response thresholds.
+**CPO decisions:** product narrative, permitted product claims, internal rollout
+recommendation, measurement response thresholds, and final product position.
 
-**Required output:** internal launch brief, positioning, onboarding plan,
-support assumptions, dashboard specification, rollout/rollback recommendation,
-and explicit statement that no external launch occurred.
+**Required output:** internal market-readiness brief, positioning, adoption and
+support model, dashboard specification, financial and delivery review, known
+risks, `ENGAGEMENT_REVIEW.md`, and explicit confirmation that no external launch
+or target-account representation occurred.
 
-**Gate L — CEO:** accept the internal launch simulation. External deployment or
-communication remains prohibited without separate human authorization.
+**Gate X — CEO:** accept the closeout, record company-level implications, and
+release the team. Refer material portfolio or governance issues to the Board.
 
-## Stage 11: Review
+## Board involvement
 
-**Purpose:** convert the work into better product judgment.
-
-**Active roles:** CEO, Product Coach, Product Operations Manager.
-
-**Required output:** `RETROSPECTIVE.md` with outcome review, decision evidence,
-rubric scores, one demonstrated strength, one priority growth area, and a next
-case recommendation.
-
-**Gate R — CEO:** close the case and release its agents. Preserve all artifacts
-in the engagement folder.
+The Independent Board Director for Product and Strategy is not a standing
+engagement role. Activate the director only under
+`playbooks/BOARD_GOVERNANCE.md`. Store any opinion in `BOARD_ADVISORY.md` without
+changing the underlying executive or CPO decision record.
 
 ## Gate-status format
 
 Record each gate in `DECISION_LOG.md`:
 
 ```markdown
-## YYYY-MM-DD — Gate P: Problem definition
+## YYYY-MM-DD — Gate S: Product strategy
 
 - Decision owner: Human CPO
 - Status: approved | rejected | revise
 - Decision:
 - Evidence considered:
-- Options rejected and why:
+- Alternatives rejected and why:
 - Risks and unknowns:
+- Dissent:
 - Downstream consequence:
 ```

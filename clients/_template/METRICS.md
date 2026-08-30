@@ -1,7 +1,7 @@
 # Product measurement plan
 
-Use synthetic data for this educational studio. Never imply that synthetic
-events or results came from real users.
+Use synthetic data under the current no-outreach boundary. Never imply that
+synthetic events or results came from real users.
 
 ## Product outcome
 
@@ -33,7 +33,7 @@ events or results came from real users.
 
 - If [metric] reaches [threshold], then [product response].
 - If [guardrail] crosses [threshold], then [product response].
-- If evidence is inconclusive, then [next learning step].
+- If evidence is inconclusive, then [next evidence step].
 
 ## Analysis notes
 

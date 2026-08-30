@@ -1,4 +1,4 @@
-name: Validate studio
+name: Validate company
 
 on:
   push:

@@ -1,46 +1,47 @@
-# Fictional engagement brief
+# Internal target-account brief
 
-> **Fictional educational exercise. The named company did not request this work
-> and is not affiliated with CPO Practice Studio.**
+> **Independent speculative work. The named organization is not a client of
+> Greyshore Product Partners and did not request, review, or endorse this work.**
 
 ## Brief metadata
 
-- **Named company:** [company]
+- **Target organization:** [organization]
 - **Prepared by:** AI Sales Director and AI Account Executive
 - **Selected by:** AI CEO
 - **Date:** YYYY-MM-DD
 - **Product category:** [website | mobile app | SaaS | platform | internal tool]
-- **Learning value:** [why this case was selected]
+- **Strategic fit:** [why this opportunity fits Greyshore's portfolio]
 
-## Public signal
+## Public market signal
 
-[What current, public evidence makes this a useful scenario?]
+[What current public evidence supports evaluating this opportunity?]
 
 | Label | Claim | Source | Published | Accessed |
 |---|---|---|---|---|
 | Fact | [claim] | [URL] | YYYY-MM-DD or unknown | YYYY-MM-DD |
 
-## Fictional request
+## Internal product mandate
 
-[A concise simulation of what a consulting client might ask for. Do not write
-as if the company actually asked.]
+[The product outcome Greyshore will investigate. Do not state or imply that the
+target organization requested it.]
 
-## Assumptions invented for the exercise
+## Internal assumptions
 
-- [Assumption]
+- [Assumed need, constraint, stakeholder, commercial condition, or account fact]
 
-## Business context
+## Company and account context
 
-- **Synthetic objective:** [business outcome]
-- **Synthetic constraint:** [budget, time, policy, channel, or dependency]
-- **Potential stakeholders:** [roles, not invented named people]
+- **Assumed business objective:** [business outcome]
+- **Assumed constraint:** [budget, time, policy, channel, or dependency]
+- **Potential stakeholder roles:** [roles, not invented named people]
+- **Strategic value to Greyshore:** [portfolio or capability value]
 - **Known risks:** [risk]
 
-## What is deliberately unknown
+## Material unknowns
 
-- [Unknown the CPO should investigate or make an assumption about]
+- [Unknown requiring evidence or an explicit management assumption]
 
 ## CEO assignment to the CPO
 
-[The product outcome the CPO is accountable for exploring—not a prescribed
+[The product outcome the CPO is accountable for, without prescribing a
 solution.]

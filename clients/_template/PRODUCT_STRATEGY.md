@@ -1,13 +1,13 @@
 # Product strategy
 
-This document records the CPO's choices. Agents may draft options and analysis,
-but must not silently fill in product decisions.
+This document records the CPO's choices. Agents may draft evidence, alternatives,
+and recommendations but must not fill in product decisions without her approval.
 
 ## Context
 
 - **Public facts:** [link to `RESEARCH.md`]
-- **Exercise assumptions:** [assumptions]
-- **Constraint:** [synthetic constraint]
+- **Internal assumptions:** [assumptions]
+- **Constraint:** [financial, technical, policy, channel, or capacity constraint]
 
 ## Target user
 
@@ -39,7 +39,7 @@ unlike [current alternative].
 
 ## Product principles
 
-1. [Principle that helps resolve future tradeoffs]
+1. [Principle that resolves future tradeoffs]
 
 ## Risks and assumptions
 

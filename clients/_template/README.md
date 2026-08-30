@@ -1,45 +1,47 @@
 # [Engagement name]
 
-> **Fictional educational exercise. The named company did not request this work
-> and is not affiliated with CPO Practice Studio.**
+> **Independent speculative work. The named organization is not a client of
+> Greyshore Product Partners and did not request, review, or endorse this work.**
 
-## Case at a glance
+## Engagement at a glance
 
-- **Named company:** [company]
+- **Target organization:** [organization]
 - **Product type:** [website | mobile app | SaaS | platform | internal tool]
-- **Fictional engagement:** [one-sentence description]
-- **Current stage:** [Opportunity | Kickoff | Discover | Define | Explore |
-  Validate | Plan | Build | Assure | Launch simulation | Review]
+- **Internal mandate:** [one-sentence description]
+- **Current stage:** [Opportunity | Qualification | Kickoff | Discovery |
+  Strategy | Solution | Validation | Plan | Build and assure | Market readiness
+  and closeout]
 - **CEO:** AI CEO
 - **CPO:** Human CPO
-- **CTO:** AI CTO, when activated
+- **CTO:** AI CTO, when active
 - **Started:** YYYY-MM-DD
-- **Status:** active
+- **Status:** [qualifying | active | blocked | closed]
 
-## Learning objective
+## Strategic objective
 
-[What product skill should this case help the CPO practice?]
+[Why Greyshore allocated company capacity to this engagement.]
 
 ## Current product decision
 
-[The one question currently awaiting the CPO's judgment.]
+[The product question currently owned by the CPO.]
 
 ## Source-of-truth map
 
-- `BRIEF.md` — fictional request, sourced context, and assumptions
-- `TEAM.md` — active roles and assignments
+- `BRIEF.md` — target-account signal, internal mandate, sources, and assumptions
+- `QUALIFICATION.md` — executive assessment and CEO acceptance conditions
+- `TEAM.md` — active roles, assignments, and release conditions
 - `RESEARCH.md` — public evidence, synthetic evidence, and limitations
-- `DECISION_LOG.md` — CPO and executive decisions
+- `DECISION_LOG.md` — CPO, executive, and Board decisions
 - `PRODUCT_STRATEGY.md` — user, problem, outcome, value, principles, non-goals
-- `PRD.md` — approved product requirements and acceptance criteria
+- `PRD.md` — approved requirements and acceptance criteria
 - `ROADMAP.md` — outcome-based sequence and explicit deferrals
 - `METRICS.md` — metric tree, guardrails, instrumentation, thresholds
-- `design/` — flows, prototypes, tests, and design rationale
+- `design/` — flows, prototypes, validation, and design rationale
 - `delivery/` — technical plan, MVP code, tests, and build log
-- `COACHING_LOG.md` — stage feedback and next practice focus
-- `RETROSPECTIVE.md` — final case and learning review
+- `BOARD_ADVISORY.md` — optional independent Board opinion when triggered
+- `ENGAGEMENT_REVIEW.md` — closeout, acceptance, and company implications
 
 ## External-tool references
 
-[Links to optional free-tool artifacts. Include what was exported or summarized
-back into this folder. Do not include private links or credentials.]
+[Links to optional free-tool artifacts, plus what was exported or summarized
+into this folder. Do not include private links or credentials.]

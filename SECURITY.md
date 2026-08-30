@@ -1,7 +1,7 @@
 # Security policy
 
-This educational repository should contain no secrets, personal data, client
-data, or production integrations.
+This public company repository should contain no secrets, personal data,
+target-account confidential data, or production integrations.
 
 If you find an exposed credential or other sensitive information, do not open a
 public issue containing the value. Use GitHub's private vulnerability-reporting

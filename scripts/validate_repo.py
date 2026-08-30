@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the studio's structural and safety contracts."""
+"""Validate Greyshore's structural, authority, and representation contracts."""
 
 from __future__ import annotations
 
@@ -20,10 +20,10 @@ REQUIRED_FILES = [
     "DISCLAIMER.md",
     "company/ORG_CHART.md",
     "company/ROLE_CATALOG.md",
-    "playbooks/START_HERE.md",
+    "playbooks/OPERATING_GUIDE.md",
     "playbooks/ENGAGEMENT_LIFECYCLE.md",
-    "playbooks/COACHING.md",
-    "playbooks/CURRICULUM.md",
+    "playbooks/BOARD_GOVERNANCE.md",
+    "playbooks/PORTFOLIO_STRATEGY.md",
     "playbooks/TOOLS.md",
     "docs/USING_CODEX.md",
 ]
@@ -31,6 +31,7 @@ REQUIRED_FILES = [
 REQUIRED_TEMPLATE_FILES = [
     "README.md",
     "BRIEF.md",
+    "QUALIFICATION.md",
     "TEAM.md",
     "RESEARCH.md",
     "DECISION_LOG.md",
@@ -38,19 +39,38 @@ REQUIRED_TEMPLATE_FILES = [
     "PRD.md",
     "ROADMAP.md",
     "METRICS.md",
-    "COACHING_LOG.md",
-    "RETROSPECTIVE.md",
+    "BOARD_ADVISORY.md",
+    "ENGAGEMENT_REVIEW.md",
     "design/README.md",
     "delivery/README.md",
     "delivery/BUILD_LOG.md",
 ]
 
-DISCLAIMER_PARTS = (
-    "Fictional educational exercise.",
-    "did not request this work",
-    "not affiliated with CPO Practice Studio.",
+DISCLOSURE_PARTS = (
+    "Independent speculative work.",
+    "not a client of",
+    "Greyshore Product Partners",
+    "did not request, review, or endorse this work.",
 )
 
+LEGACY_FRAMING_TERMS = (
+    "tr" + "ain" + "ing",
+    "co" + "ach",
+    "prac" + "tice",
+    "educa" + "tional",
+    "learn" + "er",
+    "learn" + "ing",
+    "curric" + "ulum",
+    "rub" + "ric",
+    "exer" + "cise",
+    "simu" + "lation",
+    "simu" + "lated",
+    "fic" + "tional",
+    "te" + "ach",
+    "men" + "tor",
+)
+
+TEXT_SUFFIXES = {".md", ".toml", ".py", ".yml", ".yaml"}
 MARKDOWN_LINK = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
 
 
@@ -58,11 +78,21 @@ def normalized_text(path: Path) -> str:
     return " ".join(path.read_text(encoding="utf-8").split())
 
 
-def has_disclaimer(path: Path) -> bool:
+def has_disclosure(path: Path) -> bool:
     if not path.is_file():
         return False
     text = normalized_text(path)
-    return all(part in text for part in DISCLAIMER_PARTS)
+    return all(part in text for part in DISCLOSURE_PARTS)
+
+
+def repository_text_files() -> list[Path]:
+    return sorted(
+        path
+        for path in ROOT.rglob("*")
+        if path.is_file()
+        and ".git" not in path.parts
+        and path.suffix.lower() in TEXT_SUFFIXES
+    )
 
 
 def validate() -> list[str]:
@@ -78,16 +108,20 @@ def validate() -> list[str]:
 
     for relative in REQUIRED_TEMPLATE_FILES:
         if not (TEMPLATE_DIR / relative).is_file():
-            errors.append(f"missing client-template file: {relative}")
+            errors.append(f"missing account-template file: {relative}")
 
     for relative in ("README.md", "BRIEF.md"):
         path = TEMPLATE_DIR / relative
-        if not has_disclaimer(path):
-            errors.append(f"client template lacks complete disclaimer: {relative}")
+        if not has_disclosure(path):
+            errors.append(f"account template lacks complete disclosure: {relative}")
 
     profiles = sorted(AGENT_DIR.glob("*.toml"))
-    if len(profiles) < 20:
-        errors.append(f"expected at least 20 agent profiles, found {len(profiles)}")
+    if len(profiles) != 30:
+        errors.append(f"expected 30 agent profiles, found {len(profiles)}")
+
+    board_profile = AGENT_DIR / "board-product-advisor.toml"
+    if not board_profile.is_file():
+        errors.append("missing independent Board product-advisor profile")
 
     names: dict[str, Path] = {}
     required_keys = ("name", "description", "developer_instructions")
@@ -120,24 +154,32 @@ def validate() -> list[str]:
                 continue
             for relative in ("README.md", "BRIEF.md"):
                 path = engagement / relative
-                if not has_disclaimer(path):
+                if not has_disclosure(path):
                     errors.append(
-                        f"engagement lacks complete disclaimer: "
+                        f"engagement lacks complete disclosure: "
                         f"{path.relative_to(ROOT)}"
                     )
 
-    for markdown in sorted(ROOT.rglob("*.md")):
-        if ".git" in markdown.parts:
+    for path in repository_text_files():
+        text = path.read_text(encoding="utf-8")
+        lowered = text.lower()
+        for term in LEGACY_FRAMING_TERMS:
+            if term in lowered:
+                errors.append(
+                    f"legacy company framing remains in {path.relative_to(ROOT)}: "
+                    f"{term}"
+                )
+
+        if path.suffix.lower() != ".md":
             continue
-        text = markdown.read_text(encoding="utf-8")
         for raw_target in MARKDOWN_LINK.findall(text):
             target = raw_target.strip().strip("<>")
             if not target or target.startswith(("http://", "https://", "mailto:", "#")):
                 continue
             local_target = unquote(target.split("#", 1)[0])
-            if not (markdown.parent / local_target).exists():
+            if not (path.parent / local_target).exists():
                 errors.append(
-                    f"broken local Markdown link in {markdown.relative_to(ROOT)}: "
+                    f"broken local Markdown link in {path.relative_to(ROOT)}: "
                     f"{raw_target}"
                 )
 
@@ -162,7 +204,7 @@ def main() -> int:
     )
     print(
         "Repository validation passed: "
-        f"{profile_count} agent profiles, {engagement_count} practice engagements."
+        f"{profile_count} agent profiles, {engagement_count} account engagements."
     )
     return 0
 

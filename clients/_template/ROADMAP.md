@@ -1,7 +1,7 @@
 # Outcome roadmap
 
-This is a sequence of learning and outcomes, not a feature calendar. Dates are
-fictional planning assumptions unless explicitly tied to the practice schedule.
+This is a sequence of outcomes and evidence, not a feature calendar. Dates are
+internal planning assumptions unless supported by a recorded company decision.
 
 | Horizon | Outcome or question | Evidence needed | Candidate scope | Owner | Exit criterion | Status |
 |---|---|---|---|---|---|---|

@@ -1,71 +1,84 @@
-# Using the studio with Codex
+# Running Greyshore with Codex
 
-The repository is configured so a lead Codex agent can assemble specialist AI
-roles for non-product work while the human CPO stays in the main conversation.
+The repository configures a lead Codex agent to operate as Greyshore's CEO and
+assemble specialist AI roles while the human CPO remains in the main product
+conversation.
 
-## How it works
+## Agent configuration
 
-Codex reads the root `AGENTS.md` before working. The 30 project-specific agent
-profiles in `.codex/agents/` describe when and how to use each company role. The
-lead agent should activate the smallest useful team, give each specialist a
-bounded task, and return its evidence or artifact to the main engagement.
+Codex reads the root `AGENTS.md` before working. The 30 project-specific profiles
+in `.codex/agents/` define the remit and authority boundary of each Board,
+executive, product, design, engineering, data, revenue, operations, and risk
+role. The lead agent activates the smallest accountable team, gives each role a
+bounded assignment, and returns its evidence or artifact to the engagement.
 
-The role files deliberately omit a fixed model. They inherit the available
-Codex configuration, which keeps the playbook portable as models change.
+The role files omit a fixed model and inherit the available Codex configuration,
+which keeps the operating system portable as models change.
 
-Official references:
+Official OpenAI documentation:
 
 - [How Codex discovers `AGENTS.md`](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
 - [Codex subagents and project agent profiles](https://learn.chatgpt.com/docs/agent-configuration/subagents)
 
-## What the CPO needs to do
+## CPO commands
 
-The CPO can speak to the CEO in normal language. She does not need to name every
-agent or manage parallel work.
-
-Examples:
+The CPO speaks to the CEO and company roles in normal business language. She
+does not need to manage agent concurrency.
 
 ```text
-CEO, bring me the next product decision. Staff any non-product work needed to
-give me evidence and options.
+CEO, bring me the next product decision. Have the accountable teams complete
+the non-product analysis and execution first.
 ```
 
 ```text
-Coach, I do not understand this metric decision. Explain it with an example,
-then ask me one question.
+Product Analyst, give me the metric definitions, evidence, alternatives,
+recommendation, and tradeoffs. I will make the product decision.
 ```
 
 ```text
-CTO, have the engineering team build the approved MVP. Bring product ambiguity
-back to me, but make technical decisions within your authority.
+CTO, direct Engineering to build the approved MVP. Return product ambiguity to
+me, but make technical decisions within your authority.
 ```
 
 ```text
-CEO, show me which agents are active, what each owns, and which product decision
-is waiting on me.
+CEO, show me which company roles are active, what each owns, and which decision
+is blocked on my product authority.
+```
+
+## Board product advisor
+
+The Independent Board Director for Product and Strategy is not a default member
+of an engagement. Use the role only under `playbooks/BOARD_GOVERNANCE.md`.
+
+```text
+CEO, refer this matter to the Independent Board Director for Product and
+Strategy. The director should review the written record and issue an advisory
+memorandum without managing my team or writing my product decision.
 ```
 
 ## Delegation rules
 
 - Product decisions remain in the main conversation with the human CPO.
-- Read-heavy independent research and reviews can happen in parallel.
-- Each artifact has one writing owner at a time to prevent conflicting edits.
-- Every specialist receives an engagement path, task, evidence boundary, output
-  path, decision owner, and completion test.
+- Independent research and reviews can run in parallel.
+- Each artifact has one writing owner at a time.
+- Every specialist receives an engagement path, assignment, evidence boundary,
+  output path, decision owner, and completion test.
 - The lead agent reviews delegated output before treating it as accepted.
 - If subagents are unavailable, the lead agent performs the roles sequentially
-  under the same boundaries.
+  under the same authority boundaries.
+- Board involvement requires a documented governance trigger.
 
-## Expected visible behavior
+## Expected executive update
 
-When delegation is working well, the CPO should see a concise synthesis such as:
+A well-formed update is concise and accountable:
 
 ```text
-The Market Researcher found two supported patterns and one unresolved gap. The
-User Researcher designed a synthetic proxy test, and the CTO found both options
-feasible. Your decision is which target user to serve first. Here are the two
-options and their tradeoffs.
+Market Research found two supported patterns and one material unknown. User
+Research prepared a synthetic proxy analysis under the no-outreach policy. The CTO
+confirmed that both options are feasible. The Product Designer recommends
+Option A because it reduces abandonment with less scope. Your CPO decision is
+which target user and product direction to approve.
 ```
 
-She should not receive raw agent chatter, be asked to reconcile conflicting
-files, or be handed coding work.
+The CPO should not receive raw agent chatter, conflicting files, administrative
+assignments, or coding work.
