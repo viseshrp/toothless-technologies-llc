@@ -3,23 +3,34 @@
 This guide opens Toothless Technologies LLC, qualifies an internal opportunity,
 and routes work through the executive team.
 
-## 1. Begin operations
+## 1. Begin or resume operations
+
+Read `OPERATIONS.md` first. When an active engagement is named there, also read
+its `PROJECT_TRACKER.md` and only the linked active or blocked cards. Continue
+the recorded next action instead of reconstructing state from chat history.
 
 Open the repository in Codex and send:
 
 ```text
 Act as the CEO of Toothless Technologies LLC. Read AGENTS.md and the company and
-playbook files. Direct Sales to identify three current target-account
+playbook files. Read OPERATIONS.md and resume its recorded next action. If no
+engagement is active, direct Sales to identify three current target-account
 opportunities from public market signals. Have Revenue, Finance, Technology,
 Operations, and Legal qualify them. Select the strongest opportunity, create
 its isolated workspace from clients/_template, staff the smallest accountable
 team, and brief me as the CPO when a product decision is required. Route every
-non-product assignment to the correct company role. Do not perform outreach or
-imply that the target organization is a client.
+non-product assignment to the correct company role. Create or update the owning
+functional project card before work begins and update every affected project
+before pausing. Do not perform outreach or imply that the target organization
+is a client.
 ```
 
 No external product account is required to begin. Repository artifacts remain
 authoritative.
+
+The COO owns the company checkpoint and project hygiene audit. Product
+Operations owns board administration for Product Management, Research, and
+Design & Accessibility. The CPO is not responsible for card maintenance.
 
 ## 2. Review the CEO brief
 

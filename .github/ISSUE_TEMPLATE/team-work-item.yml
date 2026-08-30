@@ -1,0 +1,77 @@
+name: Team work item
+description: Create a card for one accountable Toothless Technologies LLC team.
+title: "[Team] "
+body:
+  - type: dropdown
+    id: team
+    attributes:
+      label: Owning team
+      options:
+        - Executive & Portfolio
+        - Product Management
+        - Research
+        - Design & Accessibility
+        - Development & Architecture
+        - Reliability & Security
+        - Testing & Quality
+        - Sales
+        - Marketing & Customer Success
+        - Operations
+        - Finance
+        - Legal & Risk
+    validations:
+      required: true
+  - type: input
+    id: engagement
+    attributes:
+      label: Engagement
+      description: Use the engagement slug or company.
+      placeholder: company
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: State the result and why it matters.
+    validations:
+      required: true
+  - type: input
+    id: role
+    attributes:
+      label: Accountable working role
+    validations:
+      required: true
+  - type: input
+    id: decision_owner
+    attributes:
+      label: Decision owner
+      description: Name the CPO for any reserved product decision.
+    validations:
+      required: true
+  - type: textarea
+    id: state
+    attributes:
+      label: Current state and next action
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Link related team cards or write none.
+    validations:
+      required: true
+  - type: input
+    id: artifact
+    attributes:
+      label: Repository artifact
+      placeholder: clients/example/PRD.md
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Done when
+    validations:
+      required: true

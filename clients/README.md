@@ -14,8 +14,10 @@ reviewed, or endorsed the work.
 4. Replace every bracketed placeholder in the copied folder.
 5. Keep the independent-work disclosure at the top of `README.md` and
    `BRIEF.md`.
-6. Add only active roles to `TEAM.md` and assign one owner per output.
-7. Run `python3 scripts/validate_repo.py` before committing.
+6. Create or link the owning functional-project cards in `PROJECT_TRACKER.md`.
+7. Add only active roles to `TEAM.md` and assign one owner per output.
+8. Update every affected team project and the tracker before a pause or handoff.
+9. Run `python3 scripts/validate_repo.py` before committing.
 
 Never record account data in `_template/` or mix artifacts between engagement
 folders.

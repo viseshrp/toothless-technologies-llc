@@ -26,9 +26,11 @@ Official OpenAI documentation:
 1. Open the ChatGPT desktop app and sign in.
 2. Choose **Open folder** and select the cloned
    `toothless-technologies-llc` repository.
-3. Choose **Codex**, start a **New chat**, and paste the first-launch prompt from
+3. Read the root [`OPERATIONS.md`](../OPERATIONS.md) for the current company
+   checkpoint.
+4. Choose **Codex**, start a **New chat**, and paste the first-launch prompt from
    the root [`README.md`](../README.md).
-4. Continue in the same chat until the engagement closes. Answer only the
+5. Continue in the same chat until the engagement closes. Answer only the
    product decisions reserved for the CPO; direct other work back to the CEO.
 
 The CPO does not need to choose or start individual agents. The CEO activates
@@ -77,6 +79,8 @@ memorandum without managing my team or writing my product decision.
 - Each artifact has one writing owner at a time.
 - Every specialist receives an engagement path, assignment, evidence boundary,
   output path, decision owner, and completion test.
+- Before and after work, every specialist updates the appropriate functional
+  project card under `playbooks/PROJECT_BOARDS.md`.
 - The lead agent reviews delegated output before treating it as accepted.
 - If subagents are unavailable, the lead agent performs the roles sequentially
   under the same authority boundaries.

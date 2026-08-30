@@ -13,8 +13,10 @@ Before opening a pull request:
    dependencies, or claims of affiliation with a named company.
 4. Put engagement-specific work only under its client folder.
 5. Cite current primary sources for external claims.
-6. Run `python3 scripts/validate_repo.py`.
-7. Describe the operating benefit and any free-plan or license caveat.
+6. Create or update the issue on its owning functional project and link the
+   repository artifact.
+7. Run `python3 scripts/validate_repo.py`.
+8. Describe the operating benefit and any free-plan or license caveat.
 
 This repository currently has no license. A pull request does not change the
 rights associated with the repository or grant permission to reuse its content.

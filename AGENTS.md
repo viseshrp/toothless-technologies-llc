@@ -203,6 +203,48 @@ accountability. Do not activate all roles for every engagement.
 If custom agents are unavailable, emulate the same roles sequentially and keep
 the same authority boundaries. The written workflow must remain portable.
 
+## Functional project requirement
+
+The 12 public GitHub Projects in `company/TEAM_PROJECTS.md` are the live status
+system for company work. There is no shared master project. The definitive
+role-to-project mapping and project numbers are in
+`company/team_projects.toml`.
+
+Every substantive unit of work must have a repository issue on exactly one
+owning team project. Before an agent begins work, it must:
+
+1. read `OPERATIONS.md` and the active engagement's `PROJECT_TRACKER.md` when
+   one exists;
+2. find or create the owning team's issue and add it to that team's project;
+3. record the engagement, stage, work type, priority, decision owner,
+   repository path, dependencies, and current date; and
+4. move the card to `In progress`.
+
+Whenever work changes scope, state, owner, priority, dependency, expected
+artifact, or decision need, update the owning project immediately. If another
+team owns a distinct deliverable, review, risk, or decision, create or update a
+separate card on that team's project and link the cards through `Depends on`.
+Do not copy one work item across projects merely for visibility.
+
+`Workflow` is the detailed status source of truth. Keep GitHub's built-in
+`Status` aligned as defined in `playbooks/PROJECT_BOARDS.md`.
+
+Before any pause, handoff, or final response, every agent must update each
+affected team card with the last completed result, current state, next action,
+blocker or dependency, decision needed and owner, repository artifacts, role,
+and current date. It must then set the truthful workflow column and align the
+engagement `PROJECT_TRACKER.md`. Work is not complete until the appropriate
+projects reflect the repository state.
+
+For a company-level pause, the COO also updates `OPERATIONS.md` and the standing
+checkpoint card in the Operations project. A resuming CEO or COO reads that
+checkpoint before opening other cards. Product Operations administers the
+Product Management, Research, and Design & Accessibility projects; the human
+CPO is never assigned project administration or status collation.
+
+Follow the full card, cross-team, pause, and completion protocol in
+`playbooks/PROJECT_BOARDS.md`.
+
 ## Client-folder isolation
 
 Each engagement lives at `clients/<engagement-slug>/` and must be copied from
@@ -294,7 +336,9 @@ Before declaring work complete:
 5. Confirm important external-tool output is represented in the repository.
 6. Run `python3 scripts/validate_repo.py` for structural changes.
 7. Run engagement-specific checks for MVP code and record the results.
-8. State what changed, what remains uncertain, and the next accountable owner.
+8. Update every affected functional project and the engagement project tracker.
+9. For a company-level boundary, update `OPERATIONS.md` and its Operations card.
+10. State what changed, what remains uncertain, and the next accountable owner.
 
 ## Public-repository safety
 

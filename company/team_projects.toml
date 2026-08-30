@@ -1,0 +1,135 @@
+version = 1
+owner = "viseshrp"
+repository = "viseshrp/toothless-technologies-llc"
+
+[workflow]
+statuses = ["Backlog", "Ready", "In progress", "Review", "Blocked", "Done"]
+required_fields = [
+  "Workflow",
+  "Priority",
+  "Engagement",
+  "Stage",
+  "Work type",
+  "Decision owner",
+  "Repository path",
+  "Depends on",
+  "Last touched",
+]
+
+[[projects]]
+key = "executive-portfolio"
+name = "Toothless | Executive & Portfolio"
+number = 2
+url = "https://github.com/users/viseshrp/projects/2"
+accountable_role = "ceo"
+agents = ["ceo", "board-product-advisor"]
+
+[[projects]]
+key = "product-management"
+name = "Toothless | Product Management"
+number = 3
+url = "https://github.com/users/viseshrp/projects/3"
+accountable_role = "human-cpo"
+agents = [
+  "product-operations-manager",
+  "product-analyst",
+  "experimentation-analyst",
+]
+
+[[projects]]
+key = "research"
+name = "Toothless | Research"
+number = 4
+url = "https://github.com/users/viseshrp/projects/4"
+accountable_role = "human-cpo"
+agents = ["market-researcher", "user-researcher"]
+
+[[projects]]
+key = "design-accessibility"
+name = "Toothless | Design & Accessibility"
+number = 5
+url = "https://github.com/users/viseshrp/projects/5"
+accountable_role = "human-cpo"
+agents = [
+  "product-designer",
+  "content-designer",
+  "accessibility-specialist",
+]
+
+[[projects]]
+key = "development-architecture"
+name = "Toothless | Development & Architecture"
+number = 6
+url = "https://github.com/users/viseshrp/projects/6"
+accountable_role = "cto"
+agents = [
+  "cto",
+  "engineering-manager",
+  "solution-architect",
+  "frontend-engineer",
+  "backend-engineer",
+  "mobile-engineer",
+  "data-engineer",
+  "technical-writer",
+]
+
+[[projects]]
+key = "reliability-security"
+name = "Toothless | Reliability & Security"
+number = 7
+url = "https://github.com/users/viseshrp/projects/7"
+accountable_role = "cto"
+agents = ["devops-sre", "security-engineer"]
+
+[[projects]]
+key = "testing-quality"
+name = "Toothless | Testing & Quality"
+number = 8
+url = "https://github.com/users/viseshrp/projects/8"
+accountable_role = "cto"
+agents = ["qa-engineer"]
+
+[[projects]]
+key = "sales"
+name = "Toothless | Sales"
+number = 9
+url = "https://github.com/users/viseshrp/projects/9"
+accountable_role = "chief-revenue-officer"
+agents = [
+  "chief-revenue-officer",
+  "sales-director",
+  "account-executive",
+  "solutions-consultant",
+]
+
+[[projects]]
+key = "marketing-customer-success"
+name = "Toothless | Marketing & Customer Success"
+number = 10
+url = "https://github.com/users/viseshrp/projects/10"
+accountable_role = "chief-revenue-officer"
+agents = ["product-marketing-manager", "customer-success-manager"]
+
+[[projects]]
+key = "operations"
+name = "Toothless | Operations"
+number = 11
+url = "https://github.com/users/viseshrp/projects/11"
+accountable_role = "coo"
+agents = ["coo"]
+
+[[projects]]
+key = "finance"
+name = "Toothless | Finance"
+number = 12
+url = "https://github.com/users/viseshrp/projects/12"
+accountable_role = "cfo"
+agents = ["cfo"]
+
+[[projects]]
+key = "legal-risk"
+name = "Toothless | Legal & Risk"
+number = 13
+url = "https://github.com/users/viseshrp/projects/13"
+accountable_role = "coo"
+agents = ["legal-risk-advisor"]

@@ -25,9 +25,12 @@ CPO leads product and never writes code.
 
 1. Open the ChatGPT desktop app, choose **Open folder**, and select this cloned
    repository (`toothless-technologies-llc`).
-2. Choose **Codex**, start a **New chat**, and paste the launch prompt below.
-3. Stay in that chat for the engagement. The CEO will assemble the AI team and
-   return when the CPO has a product decision to make.
+2. Read [`OPERATIONS.md`](OPERATIONS.md) to see exactly where company work last
+   stopped, then choose **Codex**, start a **New chat**, and paste the launch
+   prompt below.
+3. Stay in that chat for the engagement. The CEO will resume the recorded next
+   action, assemble the AI team, and return when the CPO has a product decision
+   to make.
 
 No command line, coding, or manual agent setup is required for the CPO. Codex
 reads [`AGENTS.md`](AGENTS.md) and the 30 project agent profiles automatically
@@ -43,8 +46,10 @@ opportunities from current public market signals. Qualify them with Revenue,
 Finance, Technology, and Legal, select the strongest opportunity, create its
 isolated account workspace, and staff the smallest team required. Brief me as
 the CPO when a product decision is ready. Route every non-product task to the
-accountable executive or specialist. Do not perform outreach or imply that the
-target organization is a client.
+accountable executive or specialist. Read OPERATIONS.md first. Create or update
+the appropriate functional project card before each team works, and update all
+affected team projects before pausing. Do not perform outreach or imply that
+the target organization is a client.
 ```
 
 The first useful result should be a CEO brief containing the selected target
@@ -87,12 +92,26 @@ product acceptance. AI executives own the remaining company functions.
 The Board product advisor participates only when the CPO requests counsel or a
 major product, portfolio, conflict, or governance matter reaches the Board.
 
+## Functional Kanban projects
+
+The company has 12 separate public GitHub Projects: Executive & Portfolio,
+Product Management, Research, Design & Accessibility, Development &
+Architecture, Reliability & Security, Testing & Quality, Sales, Marketing &
+Customer Success, Operations, Finance, and Legal & Risk.
+
+[`company/TEAM_PROJECTS.md`](company/TEAM_PROJECTS.md) contains every board link
+and the complete 30-role assignment. Each work item has one owning team; linked
+cards express cross-team dependencies. `OPERATIONS.md` records the company-wide
+pause point, and each engagement's `PROJECT_TRACKER.md` indexes its cards across
+the team projects. The CPO does not administer boards.
+
 ## Account workspace
 
 Every engagement is isolated under `clients/<engagement-slug>/`. Copy
 [`clients/_template/`](clients/_template/) to begin. Each workspace contains:
 
 - the internal opportunity brief and source log;
+- the cross-team project tracker and pause point;
 - team assignments and executive accountability;
 - research, strategy, PRD, roadmap, and metrics;
 - product and executive decision records;
@@ -132,6 +151,8 @@ substitutions. No engagement may depend on a paid plan or expiring trial.
   oversight and product-advisor protocol
 - [`playbooks/PORTFOLIO_STRATEGY.md`](playbooks/PORTFOLIO_STRATEGY.md) — the
   firm's account and product-portfolio progression
+- [`playbooks/PROJECT_BOARDS.md`](playbooks/PROJECT_BOARDS.md) — functional
+  projects, card ownership, cross-team dependencies, and handoffs
 - [`docs/USING_CODEX.md`](docs/USING_CODEX.md) — company-role delegation in Codex
 
 ## Validate the repository
@@ -141,8 +162,8 @@ python3 scripts/validate_repo.py
 ```
 
 The validator checks required operating files, agent-profile count and schema,
-account-template structure, disclosure language, internal links, and prohibited
-company framing.
+functional-project count and one-project-per-agent assignment, account-template
+structure, disclosure language, internal links, and prohibited company framing.
 
 ## Public-repository note
 

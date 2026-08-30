@@ -27,6 +27,7 @@
 
 ## Source-of-truth map
 
+- `PROJECT_TRACKER.md` — linked functional-project cards, status, and next action
 - `BRIEF.md` — target-account signal, internal mandate, sources, and assumptions
 - `QUALIFICATION.md` — executive assessment and CEO acceptance conditions
 - `TEAM.md` — active roles, assignments, and release conditions

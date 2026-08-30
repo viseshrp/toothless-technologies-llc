@@ -17,19 +17,25 @@ TEMPLATE_DIR = ROOT / "clients" / "_template"
 REQUIRED_FILES = [
     "AGENTS.md",
     "README.md",
+    "OPERATIONS.md",
     "DISCLAIMER.md",
     "company/ORG_CHART.md",
     "company/ROLE_CATALOG.md",
+    "company/TEAM_PROJECTS.md",
+    "company/team_projects.toml",
     "playbooks/OPERATING_GUIDE.md",
     "playbooks/ENGAGEMENT_LIFECYCLE.md",
     "playbooks/BOARD_GOVERNANCE.md",
     "playbooks/PORTFOLIO_STRATEGY.md",
+    "playbooks/PROJECT_BOARDS.md",
     "playbooks/TOOLS.md",
     "docs/USING_CODEX.md",
+    ".github/ISSUE_TEMPLATE/team-work-item.yml",
 ]
 
 REQUIRED_TEMPLATE_FILES = [
     "README.md",
+    "PROJECT_TRACKER.md",
     "BRIEF.md",
     "QUALIFICATION.md",
     "TEAM.md",
@@ -166,6 +172,115 @@ def validate() -> list[str]:
             else:
                 names[name] = profile
 
+    team_projects_path = ROOT / "company" / "team_projects.toml"
+    if team_projects_path.is_file():
+        try:
+            team_data = tomllib.loads(team_projects_path.read_text(encoding="utf-8"))
+        except (OSError, tomllib.TOMLDecodeError) as exc:
+            errors.append(f"invalid team project manifest: {exc}")
+        else:
+            projects = team_data.get("projects")
+            workflow = team_data.get("workflow")
+            expected_statuses = [
+                "Backlog",
+                "Ready",
+                "In progress",
+                "Review",
+                "Blocked",
+                "Done",
+            ]
+            expected_fields = [
+                "Workflow",
+                "Priority",
+                "Engagement",
+                "Stage",
+                "Work type",
+                "Decision owner",
+                "Repository path",
+                "Depends on",
+                "Last touched",
+            ]
+            if not isinstance(workflow, dict):
+                errors.append("team project manifest lacks workflow configuration")
+            else:
+                if workflow.get("statuses") != expected_statuses:
+                    errors.append("team project workflow statuses do not match the contract")
+                if workflow.get("required_fields") != expected_fields:
+                    errors.append("team project fields do not match the contract")
+
+            if not isinstance(projects, list) or len(projects) != 12:
+                count = len(projects) if isinstance(projects, list) else 0
+                errors.append(f"expected 12 functional projects, found {count}")
+            else:
+                assigned_agents: list[str] = []
+                project_numbers: set[int] = set()
+                project_urls: set[str] = set()
+                for project in projects:
+                    if not isinstance(project, dict):
+                        errors.append("team project manifest contains a non-table entry")
+                        continue
+                    for key in ("key", "name", "number", "url", "accountable_role"):
+                        if key not in project:
+                            errors.append(f"team project entry lacks {key}")
+
+                    number = project.get("number")
+                    if isinstance(number, int):
+                        if number in project_numbers:
+                            errors.append(f"duplicate team project number: {number}")
+                        project_numbers.add(number)
+
+                    url = project.get("url")
+                    if isinstance(url, str):
+                        if url in project_urls:
+                            errors.append(f"duplicate team project URL: {url}")
+                        project_urls.add(url)
+                        if isinstance(number, int):
+                            expected_url = (
+                                "https://github.com/users/viseshrp/projects/"
+                                f"{number}"
+                            )
+                            if url != expected_url:
+                                errors.append(
+                                    f"team project {number} has unexpected URL: {url}"
+                                )
+
+                    project_agents = project.get("agents")
+                    if not isinstance(project_agents, list) or not all(
+                        isinstance(agent, str) for agent in project_agents
+                    ):
+                        errors.append(
+                            f"team project {project.get('key', '<unknown>')} has invalid agents"
+                        )
+                    else:
+                        assigned_agents.extend(project_agents)
+
+                duplicate_assignments = sorted(
+                    agent for agent in set(assigned_agents)
+                    if assigned_agents.count(agent) > 1
+                )
+                if duplicate_assignments:
+                    errors.append(
+                        "agents assigned to multiple functional projects: "
+                        + ", ".join(duplicate_assignments)
+                    )
+
+                missing_assignments = sorted(set(names) - set(assigned_agents))
+                unknown_assignments = sorted(set(assigned_agents) - set(names))
+                if missing_assignments:
+                    errors.append(
+                        "agents missing from functional projects: "
+                        + ", ".join(missing_assignments)
+                    )
+                if unknown_assignments:
+                    errors.append(
+                        "unknown agents in functional projects: "
+                        + ", ".join(unknown_assignments)
+                    )
+                if project_numbers != set(range(2, 14)):
+                    errors.append(
+                        "functional project numbers must be exactly 2 through 13"
+                    )
+
     clients_dir = ROOT / "clients"
     if clients_dir.is_dir():
         for engagement in sorted(clients_dir.iterdir()):
@@ -220,6 +335,13 @@ def main() -> int:
         return 1
 
     profile_count = len(list(AGENT_DIR.glob("*.toml")))
+    team_project_count = 0
+    team_projects_path = ROOT / "company" / "team_projects.toml"
+    if team_projects_path.is_file():
+        team_data = tomllib.loads(team_projects_path.read_text(encoding="utf-8"))
+        projects = team_data.get("projects")
+        if isinstance(projects, list):
+            team_project_count = len(projects)
     engagement_count = len(
         [
             path
@@ -229,7 +351,8 @@ def main() -> int:
     )
     print(
         "Repository validation passed: "
-        f"{profile_count} agent profiles, {engagement_count} account engagements."
+        f"{profile_count} agent profiles, {team_project_count} functional projects, "
+        f"{engagement_count} account engagements."
     )
     return 0
 

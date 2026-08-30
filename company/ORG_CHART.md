@@ -56,6 +56,10 @@ The organization has 30 AI roles plus the human CPO. The Independent Board
 Director is outside the management chain and advises the CPO without replacing
 the CEO's authority or the CPO's product authority.
 
+The 30 AI roles are assigned exactly once across the 12 functional projects in
+[`TEAM_PROJECTS.md`](TEAM_PROJECTS.md). Reporting lines define authority;
+project assignment defines where work status is maintained.
+
 ## Executive and Board accountability
 
 | Role | Accountable for | Authority boundary |
